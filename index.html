@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Free Text to Speech</title>
+  <meta charset="UTF-8">
+</head>
+<body style="font-family: Arial; padding: 20px;">
+  <h2>Free Text to Speech</h2>
+  <textarea id="text" rows="6" cols="60" placeholder="Enter your text here..."></textarea><br><br>
+
+  <button onclick="speak()">🔊 Speak</button>
+
+  <script>
+    function speak() {
+      const text = document.getElementById("text").value;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = "en-US";
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.speak(speech);
+    }
+  </script>
+</body>
+</html>
